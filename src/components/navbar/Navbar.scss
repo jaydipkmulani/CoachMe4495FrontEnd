@@ -136,15 +136,14 @@
     font-family: "Montserrat", sans-serif;
   }
 
-  .menuLink {
-    /* Add your other styles for menu items */
-
-
-    /* Set the cursor to pointer on hover */
-    cursor: pointer;
-
-    /* Add your other styles for the unselected menu items */
-    /* For example, change the color, background, etc. */
+  .menu {
+    width: 1400px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
   }
 
 }

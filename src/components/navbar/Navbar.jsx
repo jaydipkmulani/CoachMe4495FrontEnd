@@ -91,35 +91,34 @@ function Navbar() {
       {(active || pathname !== "/") && (
         <>
           <hr />
-          <div className="menu">
-
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=Development">Development</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=Accounting">Accounting & Finance</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=ComputerScience">Computer Science</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=AIServices">AI Services</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=Marketing">Marketing</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=Music">Music</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=ITAndSoftware">IT & Software</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=Business">Business</Link>
-            </div>
-            <div className="link menuLink">
-              <Link to="/courses?courseCategory=Lifestyle">Lifestyle</Link>
-            </div>
+         <div className="menu">
+            <Link className="link menuLink" to="/courses?courseCategory=Development">
+              Development
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=Accounting">
+              Accounting & Finance
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=ComputerScience">
+              Computer Science
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=AIServices">
+              AI Services
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=Marketing">
+              Marketing
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=Music">
+              Music
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=ITAndSoftware">
+              IT & Software
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=Business">
+              Business
+            </Link>
+            <Link className="link menuLink" to="/courses?courseCategory=Lifestyle">
+              Lifestyle
+            </Link>
           </div>
           <hr />
         </>
