@@ -34,45 +34,7 @@ function Navbar() {
       console.log(err);
     }
   };
-  const handleCategoryClick = (category) => {
-    setSelected(category);
-  
-    // Handle navigation programmatically
-    switch (category) {
-      case "Development":
-        navigate("/courses?courseCategory=Development");
-        break;
-      case "Accounting":
-        navigate("/courses?courseCategory=Accounting");
-        break;
-      case "ComputerScience":
-        navigate("/courses?courseCategory=ComputerScience");
-        break;
-      case "AIServices":
-        navigate("/courses?courseCategory=AIServices");
-        break;
-      case "Marketing":
-        navigate("/courses?courseCategory=Marketing");
-        break;
-      case "Music":
-        navigate("/courses?courseCategory=Music");
-        break;
-      case "ITAndSoftware":
-        navigate("/courses?courseCategory=ITAndSoftware");
-        break;
-      case "Business":
-        navigate("/courses?courseCategory=Business");
-        break;
-      case "Lifestyle":
-        navigate("/courses?courseCategory=Lifestyle");
-        break;
-      default:
-        break;
-    }
-  
-    // Perform a full page refresh after navigation
-    window.location.reload();
-  };
+
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
@@ -105,7 +67,7 @@ function Navbar() {
                     Orders
                   </Link>
                   <Link className="link" to="/appointment">
-                   Appointment
+                    Appointment
                   </Link>
                   <Link className="link" to="/messages">
                     Messages
@@ -130,70 +92,34 @@ function Navbar() {
         <>
           <hr />
           <div className="menu">
-         
-        <div
-        className="link menuLink"
-        
-        onClick={() => handleCategoryClick("Development")}
-      >
-        Development
-      </div>
-        <div
-        className="link menuLink"
-       
-        onClick={() => handleCategoryClick("Accounting")}
-      >
-        Accounting & Finance
-      </div>
-      <div
-        className="link menuLink"
-        
-        onClick={() => handleCategoryClick("ComputerScience")}
-      >
-        Computer Science
-      </div>
-      <div
-        className="link menuLink"
-       
-        onClick={() => handleCategoryClick("AIServices")}
-      >
-        AI Services
-      </div>
-      <div
-        className="link menuLink"
-        
-        onClick={() => handleCategoryClick("Marketing")}
-      >
-        Marketing
-      </div>
-      <div
-        className="link menuLink"
-       
-        onClick={() => handleCategoryClick("Music")}
-      >
-        Music
-      </div>
-      <div
-        className="link menuLink"
-        
-        onClick={() => handleCategoryClick("ITAndSoftware")}
-      >
-        IT & Software
-      </div>
-      <div
-        className="link menuLink"
-       
-        onClick={() => handleCategoryClick("Business")}
-      >
-        Business
-      </div>
-      <div
-        className="link menuLink"
-       
-        onClick={() => handleCategoryClick("Lifestyle")}
-      >
-        Lifestyle
-      </div>
+
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=Development">Development</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=Accounting">Accounting & Finance</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=ComputerScience">Computer Science</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=AIServices">AI Services</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=Marketing">Marketing</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=Music">Music</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=ITAndSoftware">IT & Software</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=Business">Business</Link>
+            </div>
+            <div className="link menuLink">
+              <Link to="/courses?courseCategory=Lifestyle">Lifestyle</Link>
+            </div>
           </div>
           <hr />
         </>
