@@ -27,7 +27,7 @@ const CourseCard = ({ item }) => {
               <span>{data.username}</span>
             </div>
           )}
-          <p className="two-line-description">{item.shortDesc}</p>
+          <p className="two-line-description">{item.title}</p>
           <div className="star">
             {!isNaN(item.totalStars / item.starNumber) && (
                       <div className="stars">
