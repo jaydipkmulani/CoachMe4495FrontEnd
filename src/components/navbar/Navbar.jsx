@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate,useHistory  } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
 
@@ -9,7 +9,11 @@ function Navbar() {
   const [selected, setSelected] = useState("");
 
   const { pathname } = useLocation();
+  const history = useHistory();
 
+  function handleClick() {
+    history.push("/path", { data: "some data" });
+  }
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
@@ -92,31 +96,31 @@ function Navbar() {
         <>
           <hr />
          <div className="menu">
-            <Link className="link menuLink" to="/courses?courseCategory=Development">
+            <Link className="link menuLink" to="/courses?courseCategory=Development" onClick={handleClick}>
               Development
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Accounting">
+            <Link className="link menuLink" to="/courses?courseCategory=Accounting" onClick={handleClick}>
               Accounting & Finance
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=ComputerScience">
+            <Link className="link menuLink" to="/courses?courseCategory=ComputerScience" onClick={handleClick}>
               Computer Science
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=AIServices">
+            <Link className="link menuLink" to="/courses?courseCategory=AIServices" onClick={handleClick}>
               AI Services
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Marketing">
+            <Link className="link menuLink" to="/courses?courseCategory=Marketing" onClick={handleClick}>
               Marketing
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Music">
+            <Link className="link menuLink" to="/courses?courseCategory=Music" onClick={handleClick}>
               Music
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=ITAndSoftware">
+            <Link className="link menuLink" to="/courses?courseCategory=ITAndSoftware" onClick={handleClick}>
               IT & Software
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Business">
+            <Link className="link menuLink" to="/courses?courseCategory=Business" onClick={handleClick}>
               Business
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Lifestyle">
+            <Link className="link menuLink" to="/courses?courseCategory=Lifestyle" onClick={handleClick}>
               Lifestyle
             </Link>
           </div>
