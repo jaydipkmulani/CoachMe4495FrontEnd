@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate,useHistory  } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
 
@@ -9,23 +9,15 @@ function Navbar() {
   const [selected, setSelected] = useState("");
 
   const { pathname } = useLocation();
-  const history = useHistory();
 
-  function handleClick() {
-    history.push("/path", { data: "some data" });
-  }
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setActive(window.scrollY > 0);
-    };
-  
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", isActive);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", isActive);
     };
   }, []);
 
@@ -33,7 +25,7 @@ function Navbar() {
 
   const navigate = useNavigate();
 
-  const handleLogout = useCallback(async () => {
+  const handleLogout = async () => {
     try {
       await newRequest.post("/auth/logout");
       localStorage.setItem("currentUser", null);
@@ -41,7 +33,7 @@ function Navbar() {
     } catch (err) {
       console.log(err);
     }
-  }, [navigate]);
+  };
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -100,31 +92,31 @@ function Navbar() {
         <>
           <hr />
          <div className="menu">
-            <Link className="link menuLink" to="/courses?courseCategory=Development" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=Development">
               Development
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Accounting" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=Accounting">
               Accounting & Finance
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=ComputerScience" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=ComputerScience">
               Computer Science
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=AIServices" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=AIServices">
               AI Services
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Marketing" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=Marketing">
               Marketing
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Music" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=Music">
               Music
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=ITAndSoftware" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=ITAndSoftware">
               IT & Software
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Business" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=Business">
               Business
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Lifestyle" onClick={handleClick}>
+            <Link className="link menuLink" to="/courses?courseCategory=Lifestyle">
               Lifestyle
             </Link>
           </div>
