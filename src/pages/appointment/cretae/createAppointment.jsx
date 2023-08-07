@@ -170,7 +170,7 @@ const sortedAppointments = futureAppointments.sort((a, b) => {
                             <th>Time</th>
                             <th>BookedBy</th>
                             {/* Conditionally render the "Status" column */}
-                            <th>Status</th>
+                            <th>Video Meeting</th>
                         </tr>
                         {sortedAppointments.map((appointment) => {
 
