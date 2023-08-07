@@ -52,6 +52,18 @@ function App() {
           element: <Courses />,
         },
         {
+          path: "/courses",
+          element: <Courses />,
+        },
+        {
+          path: "/courses",
+          element: <Courses />,
+        },
+        {
+          path: "/courses",
+          element: <Courses />,
+        },
+        {
           path: "/myCourses",
           element: <MyCourses />,
         },

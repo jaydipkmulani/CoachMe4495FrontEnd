@@ -20,7 +20,17 @@ function Navbar() {
       window.removeEventListener("scroll", isActive);
     };
   }, []);
-
+  const handleLinkClick = async (category) => {
+    try {
+      // Construct the URL with the query parameter
+      const url = `/courses?courseCategory=${category}}`;
+      
+      // Navigate to the desired route
+      navigate(url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const navigate = useNavigate();
@@ -92,13 +102,14 @@ function Navbar() {
         <>
           <hr />
          <div className="menu">
-            <Link className="link menuLink" to="/courses?courseCategory=Development">
+         <Link className="link menuLink" onClick={() => handleLinkClick("Development")}>
               Development
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Accounting">
+            <Link className="link menuLink" onClick={() => handleLinkClick("Accounting")}>
               Accounting & Finance
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=ComputerScience">
+           
+            <Link className="link menuLink" onClick={() => handleLinkClick("ComputerScience")}>
               Computer Science
             </Link>
             <Link className="link menuLink" to="/courses?courseCategory=AIServices">
