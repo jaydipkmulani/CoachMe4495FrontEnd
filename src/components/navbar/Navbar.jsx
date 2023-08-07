@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate ,useHistory} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
 
@@ -9,17 +9,14 @@ function Navbar() {
   const [selected, setSelected] = useState("");
 
   const { pathname } = useLocation();
-  const history = useHistory();
+
   
 
   // Function to handle navigation
   const navigateToRoute = (route) => {
-    // Perform any actions needed with the provided route string
-    // For example, you can log it
-    console.log("Navigating to:", route);
+  
 
-    // Navigate to the specified route
-    history.push(route);
+    navigate(route);
   };
   function handleClick() {
     history.push("/path", { data: "some data" });
