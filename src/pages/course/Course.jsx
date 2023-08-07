@@ -28,14 +28,17 @@ function Course() {
     error: errorUser,
     data: dataUser,
   } = useQuery({
-    queryKey: ["user"],
-    queryFn: () =>
-      newRequest.get(`/users/${userId}`).then((res) => {
-        return res.data;
-      }),
+    queryKey: ["user", userId], // Include userId in the query key
+    queryFn: async () => {
+      try {
+        const response = await newRequest.get(`/users/${userId}`);
+        return response.data;
+      } catch (error) {
+        throw error; // Rethrow the error to be handled by React Query
+      }
+    },
     enabled: !!userId,
   });
-
   return (
     <div className="course">
       {isLoading ? (
