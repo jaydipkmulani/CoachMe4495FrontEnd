@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const newRequest = axios.create({
-  baseURL: "https://coachme1.onrender.com/api/",
+  baseURL: "https://coachmebackend.onrender.com/api/",
   withCredentials: true,
 });
 
