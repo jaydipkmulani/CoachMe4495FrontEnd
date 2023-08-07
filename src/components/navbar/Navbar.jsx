@@ -23,10 +23,12 @@ function Navbar() {
   const handleLinkClick = async (category) => {
     try {
       // Construct the URL with the query parameter
-      const url = `/courses?courseCategory=${category}}`;
+      const url = `/courses?courseCategory=${category}`;
       
       // Navigate to the desired route
       navigate(url);
+      window.location.reload();
+      
     } catch (error) {
       console.error(error);
     }
