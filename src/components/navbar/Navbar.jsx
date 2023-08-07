@@ -13,12 +13,6 @@ function Navbar() {
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
-  const location = useLocation(); // Get the current location
-
-  useEffect(() => {
-    // Refresh the page when the URL changes
-    window.location.reload();
-  }, [location]);
 
   useEffect(() => {
     window.addEventListener("scroll", isActive);
