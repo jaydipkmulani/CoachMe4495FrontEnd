@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate ,useHistory} from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Navbar.scss";
 
