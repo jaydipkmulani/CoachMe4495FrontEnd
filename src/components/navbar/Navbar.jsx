@@ -9,7 +9,21 @@ function Navbar() {
   const [selected, setSelected] = useState("");
 
   const { pathname } = useLocation();
+  const history = useHistory();
+  
 
+  // Function to handle navigation
+  const navigateToRoute = (route) => {
+    // Perform any actions needed with the provided route string
+    // For example, you can log it
+    console.log("Navigating to:", route);
+
+    // Navigate to the specified route
+    history.push(route);
+  };
+  function handleClick() {
+    history.push("/path", { data: "some data" });
+  }
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false);
   };
@@ -92,10 +106,18 @@ function Navbar() {
         <>
           <hr />
          <div className="menu">
-            <Link className="link menuLink" to="/courses?courseCategory=Development">
+         <Link
+          className="link menuLink"
+          to="/courses?courseCategory=Development"
+          onClick={() => navigateToRoute("/courses?courseCategory=Development")}
+        >
               Development
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Accounting">
+            <Link
+          className="link menuLink"
+          to="/courses?courseCategory=Development"
+          onClick={() => navigateToRoute("/courses?courseCategory=Accounting")}
+        >
               Accounting & Finance
             </Link>
             <Link className="link menuLink" to="/courses?courseCategory=ComputerScience">
