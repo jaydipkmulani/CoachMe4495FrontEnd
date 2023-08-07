@@ -19,9 +19,13 @@ function Navbar() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", isActive);
+    const handleScroll = () => {
+      setActive(window.scrollY > 0);
+    };
+  
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", isActive);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -29,7 +33,7 @@ function Navbar() {
 
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
+  const handleLogout = useCallback(async () => {
     try {
       await newRequest.post("/auth/logout");
       localStorage.setItem("currentUser", null);
@@ -37,7 +41,7 @@ function Navbar() {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [navigate]);
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
