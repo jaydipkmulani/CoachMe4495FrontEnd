@@ -27,7 +27,7 @@ function Navbar() {
       
       // Navigate to the desired route
       navigate(url);
-     
+      window.location.reload();
       
     } catch (error) {
       console.error(error);
