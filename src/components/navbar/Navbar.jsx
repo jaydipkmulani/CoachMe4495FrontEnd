@@ -27,7 +27,7 @@ function Navbar() {
       
       // Navigate to the desired route
       navigate(url);
-      window.location.reload();
+     
       
     } catch (error) {
       console.error(error);
@@ -114,22 +114,23 @@ function Navbar() {
             <Link className="link menuLink" onClick={() => handleLinkClick("ComputerScience")}>
               Computer Science
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=AIServices">
+         
+            <Link className="link menuLink" onClick={() => handleLinkClick("AIServices")}>
               AI Services
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Marketing">
+            <Link className="link menuLink" onClick={() => handleLinkClick("Marketing")}>
               Marketing
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Music">
+            <Link className="link menuLink" onClick={() => handleLinkClick("Music")}>
               Music
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=ITAndSoftware">
+             <Link className="link menuLink" onClick={() => handleLinkClick("ITAndSoftware")}>
               IT & Software
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Business">
+            <Link className="link menuLink" onClick={() => handleLinkClick("Business")}>
               Business
             </Link>
-            <Link className="link menuLink" to="/courses?courseCategory=Lifestyle">
+            <Link className="link menuLink" onClick={() => handleLinkClick("Lifestyle")}>
               Lifestyle
             </Link>
           </div>
