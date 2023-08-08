@@ -31,7 +31,7 @@ export default function App() {
                 },
             ],
             scenario: {
-                mode: ZegoUIKitPrebuilt.OneONoneCall, // To implement 1-on-1 calls, modify the parameter here to [ZegoUIKitPrebuilt.OneONoneCall].
+                mode: ZegoUIKitPrebuilt.GroupCall, 
             },
         });
 
@@ -43,7 +43,7 @@ export default function App() {
             ref={myMeeting}
             style={{ width: '100vw', height: '100vh' }}
         >
-            <button>back to home </button>
+           <Link to="/"><button className='button'>back to home </button></Link> 
         </div>
     );
 }
