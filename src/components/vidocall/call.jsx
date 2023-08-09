@@ -13,7 +13,7 @@ export default function App() {
             appID,
             serverSecret,
             roomID,
-            currentUser.userId,
+            currentUser._id,
             currentUser.username,
         );
 
