@@ -29,14 +29,14 @@ export default function App() {
                 },
             ],
             scenario: {
-                mode: ZegoUIKitPrebuilt.OneToOne,
+                mode: ZegoUIKitPrebuilt.GroupCall,
             },
         });
     };
 
     return (
-        <div ref={myMeeting} style={{ width: '100vw', height: '100vh' }}>
-           
+        <div className="myCallContainer" ref={myMeeting} style={{ width: '100vw', height: '100vh' }}>
+
         </div>
     );
 }
