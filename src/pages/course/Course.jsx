@@ -136,7 +136,7 @@ function Course() {
                 </div>
               </div>
             )}
-            <Reviews courseId={data.courseId} />
+            <Reviews courseId={id} />
           </div>
           <div className="right">
             <div className="price">
