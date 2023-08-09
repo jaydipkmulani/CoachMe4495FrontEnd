@@ -4,19 +4,17 @@ import { useParams } from 'react-router-dom';
 
 export default function App() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    // const { roomID } = useParams();
+    const { roomID } = useParams();
 
     let myMeeting = async (element) => {
         const appID = 893576107;
-const roomID="jd"
         const serverSecret = '980391f1b57ac5e5728db5747167f87b';
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
             appID,
             serverSecret,
-            roomID
-           ,
-            Date.now().toString(),
-            currentUser.username
+            roomID,
+            currentUser.userId,
+            currentUser.username,
         );
 
         const zp = ZegoUIKitPrebuilt.create(kitToken);
@@ -26,7 +24,7 @@ const roomID="jd"
             container: element,
           
             scenario: {
-                mode: ZegoUIKitPrebuilt.GroupCall,
+                mode: ZegoUIKitPrebuilt.OneONoneCall,
             },
         });
     };
